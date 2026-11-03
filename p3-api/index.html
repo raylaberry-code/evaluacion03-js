@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechStore - API del clima</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="contenedor">
+    <header>
+      <h1>TechStore</h1>
+      <p>Consulta del clima mediante Open-Meteo</p>
+    </header>
+
+    <section class="panel">
+      <h2>Consulta del clima</h2>
+
+      <form id="form-clima">
+        <input
+          id="ciudad"
+          type="text"
+          placeholder="Escribe una ciudad, por ejemplo Lima"
+          required
+        >
+        <button id="btn-buscar" type="submit">Consultar</button>
+      </form>
+
+      <p id="mensaje">Escribe una ciudad para comenzar.</p>
+      <div id="resultado" class="resultado"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Comparación de consultas</h2>
+      <p>Compara las consultas secuenciales y paralelas de Lima, Cusco y Arequipa.</p>
+
+      <button id="btn-secuencial">Consulta secuencial</button>
+      <button id="btn-paralelo">Consulta paralela</button>
+      <button id="btn-mediciones">Medir 3 veces</button>
+
+      <div id="comparacion"></div>
+
+      <h3>Resultados de las mediciones</h3>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Prueba</th>
+              <th>Secuencial (ms)</th>
+              <th>Paralela (ms)</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-mediciones">
+            <tr>
+              <td colspan="3">Todavía no hay mediciones.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Prueba de Promise.all y Promise.allSettled</h2>
+      <p>Se consultan dos ciudades válidas y una ciudad inexistente.</p>
+
+      <button id="btn-all">Probar Promise.all</button>
+      <button id="btn-allsettled">Probar Promise.allSettled</button>
+
+      <div id="resultado-promesas"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Documentación de la API</h2>
+
+      <h3>1. Geocodificación</h3>
+      <p>Permite buscar una ciudad y obtener sus coordenadas.</p>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Elemento</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Endpoint</td>
+              <td>geocoding-api.open-meteo.com/v1/search</td>
+            </tr>
+            <tr>
+              <td>name</td>
+              <td>Nombre de la ciudad.</td>
+            </tr>
+            <tr>
+              <td>count</td>
+              <td>Cantidad de resultados solicitados.</td>
+            </tr>
+            <tr>
+              <td>language</td>
+              <td>Idioma de los resultados.</td>
+            </tr>
+            <tr>
+              <td>format</td>
+              <td>Formato de respuesta JSON.</td>
+            </tr>
+            <tr>
+              <td>latitude / longitude</td>
+              <td>Coordenadas de la ciudad.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>2. Pronóstico del clima</h3>
+      <p>Permite consultar las condiciones meteorológicas actuales.</p>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Elemento</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Endpoint</td>
+              <td>api.open-meteo.com/v1/forecast</td>
+            </tr>
+            <tr>
+              <td>latitude</td>
+              <td>Latitud de la ciudad.</td>
+            </tr>
+            <tr>
+              <td>longitude</td>
+              <td>Longitud de la ciudad.</td>
+            </tr>
+            <tr>
+              <td>current</td>
+              <td>Solicita los datos actuales.</td>
+            </tr>
+            <tr>
+              <td>temperature_2m</td>
+              <td>Temperatura en grados Celsius.</td>
+            </tr>
+            <tr>
+              <td>relative_humidity_2m</td>
+              <td>Humedad relativa.</td>
+            </tr>
+            <tr>
+              <td>wind_speed_10m</td>
+              <td>Velocidad del viento.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>Evaluación 03 - JavaScript avanzado</p>
+      <p>Datos meteorológicos proporcionados por Open-Meteo.</p>
+    </footer>
+  </main>
+</body>
+</html>

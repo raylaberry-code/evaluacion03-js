@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore | Gestión de pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="contenedor">
+        <header class="encabezado">
+            <div class="marca">
+                <span class="marca-icono">TS</span>
+                <div>
+                    <h1>TechStore</h1>
+                    <p>Panel de gestión de pedidos</p>
+                </div>
+            </div>
+            <span class="etiqueta">Administración</span>
+        </header>
+
+        <section class="panel">
+            <div class="titulo-seccion">
+                <div>
+                    <h2>Registrar producto</h2>
+                    <p>Agrega productos al listado de pedidos.</p>
+                </div>
+            </div>
+
+            <form id="form-pedido" novalidate>
+                <label>
+                    Producto
+                    <input type="text" id="producto" placeholder="Ej. Laptop Acer" autocomplete="off">
+                </label>
+                <label>
+                    Precio (S/)
+                    <input type="number" id="precio" min="0" step="0.01" placeholder="Ej. 2500.00">
+                </label>
+                <label>
+                    Cantidad
+                    <input type="number" id="cantidad" min="0" step="1" placeholder="Ej. 1">
+                </label>
+                <button class="boton boton-principal" type="submit">＋ Agregar pedido</button>
+            </form>
+            <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel">
+            <div class="barra-lista">
+                <div>
+                    <h2>Pedidos registrados</h2>
+                    <p>Administra el estado de cada pedido.</p>
+                </div>
+                <label class="filtro-label" for="filtro">
+                    Mostrar
+                    <select id="filtro">
+                        <option value="todos">Todos</option>
+                        <option value="pendiente">Pendientes</option>
+                        <option value="entregado">Entregados</option>
+                    </select>
+                </label>
+            </div>
+
+            <ul id="lista-pedidos" class="lista-pedidos"></ul>
+
+            <div class="resumen">
+                <span>Total de pedidos</span>
+                <strong id="total">S/ 0.00</strong>
+            </div>
+        </section>
+
+        <footer>TechStore · Evaluación 03 · JavaScript</footer>
+    </main>
+</body>
+</html>
