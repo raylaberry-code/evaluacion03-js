@@ -8,7 +8,7 @@ Proyecto desarrollado para la evaluación de JavaScript avanzado de Tecsup. Se t
 ![ES Modules](https://img.shields.io/badge/ES%20Modules-Import%2FExport-blue)
 ![Estado](https://img.shields.io/badge/Estado-En%20desarrollo-orange)
 
-**GitHub Pages:** [Agregar aquí el enlace publicado]
+**GitHub Pages:** :(https://raylaberry-code.github.io/evaluacion03-js/)
 
 ## Índice
 
